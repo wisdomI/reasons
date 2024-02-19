@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import { useEffect } from 'react';
+import Slider from './components/slider/slider';
+import { slides } from './data/data';
+import HeroSection from './sections/herosection';
+import Reasons from './sections/reasons';
+
 
 function App() {
+
+  useEffect(() => {
+    document.title = "REASONS";
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeroSection />
+      <Slider slides = {slides}/>
+      <Reasons />
     </div>
   );
 }
